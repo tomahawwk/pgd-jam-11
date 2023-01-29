@@ -1,5 +1,7 @@
+using System;
 using Dialogue;
 using Prototype.PlayerPhysics;
+using Prototype.PlayerPhysics.Utils;
 using UnityEngine;
 
 namespace Prototype
@@ -9,6 +11,8 @@ namespace Prototype
     public class InputPlayer : MonoBehaviour
     {
         private DialogueSystem _dialogue => DialogueSystem.Instance;
+
+        [SerializeField] private Transform _cameraTarget;
         
         public KeyCode Interact = KeyCode.E;
         public KeyCode Forward = KeyCode.W;
@@ -25,24 +29,42 @@ namespace Prototype
             _player = GetComponent<Player>();
         }
 
+        private Vector3 _drawDebugView;
+
+        private void OnDrawGizmos()
+        {
+            if (_cameraTarget == null) return;
+            BoxGizmos.Arrow(Color.green, transform.position, _drawDebugView);
+        }
+
         private void Update()
         {
-            Vector3 direction = Vector3.zero;
+            var viewDirForward = Vector3.Normalize(transform.position - _cameraTarget.position);
+            viewDirForward.y = 0;
+            
+            var viewDirRight = Vector3.Cross(viewDirForward, Vector3.down);
+            
+            Vector3 forward = Vector3.zero;
+            Vector3 right = Vector3.zero;
 
             if (Input.GetKey(Forward))
-                direction.z = 1f;
+                forward = viewDirForward;
             if (Input.GetKey(Back))
-                direction.z = -1;
+                forward = -viewDirForward;
             if (Input.GetKey(StrafeLeft))
-                direction.x = -1;
+                right = -viewDirRight;
             if (Input.GetKey(StrafeRight))
-                direction.x = 1;
+                right = viewDirRight;
 
+            Vector3 direction = Vector3.Normalize(forward + right);
+            
             if (_dialogue.IsOpen())
                 direction = Vector3.zero;
 
             _character.Move(direction);
 
+            _drawDebugView = direction;
+            
             if (!_dialogue.IsOpen())
             {
                 if (Input.GetKeyDown(Interact))

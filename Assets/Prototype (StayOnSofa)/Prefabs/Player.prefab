@@ -1082,6 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cf9458165bfb274485bb7bfbbca9e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraTarget: {fileID: 7485904914874028561}
   Interact: 101
   Forward: 119
   Back: 115
@@ -2772,7 +2773,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7485904915350197888
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2789,7 +2790,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &7485904915350197895
 MonoBehaviour:
   m_ObjectHideFlags: 0

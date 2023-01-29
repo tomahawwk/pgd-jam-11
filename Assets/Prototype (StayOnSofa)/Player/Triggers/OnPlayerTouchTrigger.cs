@@ -15,7 +15,7 @@ namespace Prototype.Triggers
         {
             var touchObject = other.gameObject;
             
-            if (touchObject.TryGetComponent(out PlayerBody _))
+            if (touchObject.TryGetComponent(out Player _))
             {
                 OnPlayerTouch();
                 Destroy(gameObject);

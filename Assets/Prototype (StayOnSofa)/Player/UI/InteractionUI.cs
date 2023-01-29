@@ -17,7 +17,7 @@ namespace Prototype
             var center = _body.Center;
             var uiSpace = _camera.WorldToScreenPoint(center + _offset);
 
-            _interactionHelp.anchoredPosition = uiSpace;
+            _interactionHelp.position = uiSpace;
             _interactionHelp.gameObject.SetActive(_player.HasInteractions);
         }
     }
