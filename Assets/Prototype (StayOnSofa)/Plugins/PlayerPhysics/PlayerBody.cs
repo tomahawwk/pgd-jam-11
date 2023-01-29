@@ -1,5 +1,4 @@
-﻿using Prototype.PlayerPhysics.Utils;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Prototype.PlayerPhysics
 {
@@ -30,15 +29,11 @@ namespace Prototype.PlayerPhysics
         
         private Vector3 _velocityToApply;
 
+        private Vector3 _groundNormalSurface;
+        
         public Vector3 CalculateGroundNormal()
         {
-            Vector3 normal = Vector3.up;
-            RaycastHit hit;
-            
-            if (Physics.SphereCast(Center, _character.radius, Vector3.down, out hit, Mathf.Infinity, PlatformLayer))
-                normal = hit.normal;
-
-            return normal;
+            return _groundNormalSurface;
         }
 
         private Vector3 SlopedDirection(Vector3 direction, Vector3 slopeNormal)
@@ -48,18 +43,6 @@ namespace Prototype.PlayerPhysics
         }
         
         public float GroundAngle => Vector3.Angle(CalculateGroundNormal(), Vector3.up);
-
-        private void OnDrawGizmos()
-        {
-            _character = GetComponent<CharacterController>();
-
-            Vector3 normal = CalculateGroundNormal();
-
-            Vector3 feet = Center;
-            feet.y -= _character.height / 2;
-            
-            BoxGizmos.Arrow(Color.red, feet, normal);
-        }
 
         private void OnValidate()
         {
@@ -73,7 +56,7 @@ namespace Prototype.PlayerPhysics
             Air,
         }
         
-        private MoveStates _moveStates = MoveStates.Air;
+        private MoveStates _moveStates = MoveStates.Walk;
         
         private void Awake()
         {
@@ -86,6 +69,22 @@ namespace Prototype.PlayerPhysics
         public void Move(Vector3 direction)
         {
             WalkDirection = direction;
+        }
+        
+        private void FixedUpdate()
+        {
+            UpdatePhysics();
+        }
+
+        private void UpdatePhysics()
+        {
+            Vector3 normal = Vector3.up;
+            RaycastHit hit;
+            
+            if (Physics.SphereCast(Center, _character.radius, Vector3.down, out hit, Mathf.Infinity, PlatformLayer))
+                normal = hit.normal;
+
+            _groundNormalSurface = normal;
         }
 
         private void Update()
