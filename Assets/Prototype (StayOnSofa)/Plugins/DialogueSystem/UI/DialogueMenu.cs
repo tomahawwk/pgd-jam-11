@@ -34,6 +34,8 @@ namespace Dialogue
         
         private TextMeshProUGUI _text;
         
+        private void Awake() => DontDestroyOnLoad(gameObject);
+        
         public void SetText(string value)
         {
             if (_text == null)

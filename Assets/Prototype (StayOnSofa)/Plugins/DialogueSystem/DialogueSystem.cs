@@ -24,8 +24,6 @@ namespace Dialogue
         private WaitForSeconds _waitTillLetter;
         private WaitForSeconds _waitTillFastLetter;
         
-        private WaitForSeconds _waitTillNextSlide;
-
         private bool _alreadyInUse;
 
         public bool IsOpen() => _alreadyInUse;
@@ -35,8 +33,6 @@ namespace Dialogue
             _dialogueQueue = new();
             
             _waitTillLetter = new WaitForSeconds(_timerPerLetter);
-            _waitTillNextSlide = new WaitForSeconds(_timerPerNextSlide);
-
             _waitTillFastLetter = new WaitForSeconds(_fastTimerPerLetter);
         }
 
@@ -128,7 +124,10 @@ namespace Dialogue
         {
             _menu.SetMenuType(DialogueType.Simple);
             yield return FillText(text);
-            yield return _waitTillNextSlide;
+            _menu.SetHoverVisible(true);
+            
+            yield return WaitAnyKey(false);
+            _menu.SetHoverVisible(false);
         }
 
         private IEnumerator SimpleDialogueAvatar(string text, string name, Sprite avatar)
@@ -136,11 +135,11 @@ namespace Dialogue
             _menu.SetMenuType(DialogueType.Avatar);
             _menu.SetAvatarTitle(name);
             
-            _menu.SetHoverVisible(true);
             _menu.SetAvatar(avatar);
             yield return FillText(text);
             yield return null;
-
+            
+            _menu.SetHoverVisible(true);
             yield return WaitAnyKey(false);
             
             _menu.SetText(String.Empty);
@@ -178,13 +177,13 @@ namespace Dialogue
             
             _menu.SetHoverVisible(true);
             
-            _menu.GetQuestion1().Create(question1, () =>
+            _menu.GetQuestion1().Create($"1. {question1}", () =>
             {
                 result?.Invoke(true);
                 answerIsDone = true;
             });
             
-            _menu.GetQuestion2().Create(question2, () =>
+            _menu.GetQuestion2().Create($"2. {question2}", () =>
             {
                 result?.Invoke(false);
                 answerIsDone = true;
@@ -222,11 +221,6 @@ namespace Dialogue
             {
                 yield return dialogue;
             }
-
-            _menu.SetHoverVisible(true);
-            
-            if (_menu.GetMenuType() != DialogueType.Question)
-                yield return WaitAnyKey();
             
             _alreadyInUse = false;
         }
@@ -247,7 +241,7 @@ namespace Dialogue
                 Close();
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             PrepareDialogueQueue();
         }

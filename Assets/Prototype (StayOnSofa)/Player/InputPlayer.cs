@@ -2,6 +2,7 @@ using System;
 using Dialogue;
 using Prototype.PlayerPhysics;
 using Prototype.PlayerPhysics.Utils;
+using Prototype.Plugins.FadeOutSystem;
 using UnityEngine;
 
 namespace Prototype
@@ -11,6 +12,7 @@ namespace Prototype
     public class InputPlayer : MonoBehaviour
     {
         private DialogueSystem _dialogue => DialogueSystem.Instance;
+        private FadeOutSystem _fadeOut => FadeOutSystem.Instance;
 
         [SerializeField] private Transform _cameraTarget;
         
@@ -37,6 +39,11 @@ namespace Prototype
             BoxGizmos.Arrow(Color.green, transform.position, _drawDebugView);
         }
 
+        public bool UILock()
+        {
+            return _dialogue.IsOpen() || _fadeOut.IsOpen();
+        }
+
         private void Update()
         {
             var viewDirForward = Vector3.Normalize(transform.position - _cameraTarget.position);
@@ -58,14 +65,14 @@ namespace Prototype
 
             Vector3 direction = Vector3.Normalize(forward + right);
             
-            if (_dialogue.IsOpen())
+            if (UILock())
                 direction = Vector3.zero;
 
             _character.Move(direction);
 
             _drawDebugView = direction;
             
-            if (!_dialogue.IsOpen())
+            if (!UILock())
             {
                 if (Input.GetKeyDown(Interact))
                     _player.Interact();
