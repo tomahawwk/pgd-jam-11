@@ -30,7 +30,7 @@ namespace Prototype
             Vector3 direction = Vector3.zero;
 
             if (Input.GetKey(Forward))
-                direction.z = 1;
+                direction.z = 1f;
             if (Input.GetKey(Back))
                 direction.z = -1;
             if (Input.GetKey(StrafeLeft))
