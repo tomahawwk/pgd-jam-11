@@ -14,11 +14,8 @@ namespace Dialogue
 
         [SerializeField] private float _timerPerLetter = 0.05f;
         [SerializeField] private float _fastTimerPerLetter = 0.01f;
-        
-        [SerializeField] private float _timerPerNextSlide = 1.5f;
         [SerializeField] private float _timeToAutoClose = 3f;
 
-        
         private List<IEnumerator> _dialogueQueue;
         
         private WaitForSeconds _waitTillLetter;
@@ -145,6 +142,7 @@ namespace Dialogue
             _menu.SetText(String.Empty);
             _menu.SetHoverVisible(false);
         }
+        
         
 
         //Bug: need check new one for bugs

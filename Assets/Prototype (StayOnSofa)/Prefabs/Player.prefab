@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b2cda5a85a249e087f00ae2ad275782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _body: {fileID: 972168558652910603}
+  PlayerBody: {fileID: 972168558652910603}
   _rotateSpeed: 8
   _lerpSpeed: 5
 --- !u!1 &8080366137059635658
