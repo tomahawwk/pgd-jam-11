@@ -25,7 +25,7 @@ namespace Dialogue
             _dialogue.DialogueAvatar("Кот", "Ты че <color=red>ОРЕШЬ</color> то?", _secondPersona);
 
 
-            _dialogue.DialogueDoubleQuestion("Бездна", "Назови любимое живонтное?",
+            _dialogue.DialogueDoubleQuestion(_fistPersona,"Бездна", "Назови любимое живонтное?",
                 "Единорог", "Ящерица", result =>
                 {
                     if (result)

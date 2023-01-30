@@ -11,6 +11,7 @@ namespace Dialogue
         Avatar,
     }
 
+    [RequireComponent(typeof(AudioSource))]
     public class DialogueMenu : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _simpleDialogue;
@@ -26,16 +27,34 @@ namespace Dialogue
 
         [SerializeField] private TextMeshProUGUI _titleAvatar;
         [SerializeField] private TextMeshProUGUI _titleQuestion;
+
+        [SerializeField] private Sprite _avatarEmpty;
         
         [SerializeField] private Image _avatar;
+        [SerializeField] private Image _avatarQuestion;
+        
         [SerializeField] private GameObject _hover;
 
         private DialogueType _type = DialogueType.Simple;
+
+        [SerializeField] private AudioClip _click;
         
         private TextMeshProUGUI _text;
-        
-        private void Awake() => DontDestroyOnLoad(gameObject);
-        
+        private AudioSource _audioSource;
+        private void Awake()
+        {
+            _audioSource = GetComponent<AudioSource>();
+            _audioSource.clip = _click;
+            
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public void PlaySound()
+        {
+            if (!_audioSource.isPlaying)
+                _audioSource.Play();
+        }
+
         public void SetText(string value)
         {
             if (_text == null)
@@ -45,7 +64,22 @@ namespace Dialogue
         }
 
         public void SetHoverVisible(bool value) => _hover.SetActive(value);
-        public void SetAvatar(Sprite sprite) => _avatar.sprite = sprite;
+
+        public void SetAvatar(Sprite sprite)
+        {
+            if (sprite == null)
+                _avatar.sprite = _avatarEmpty;
+            else
+                _avatar.sprite = sprite;
+        }
+
+        public void SetQuestionAvatar(Sprite sprite)
+        {
+            if (sprite == null)
+                _avatarQuestion.sprite = _avatarEmpty;
+            else
+                _avatarQuestion.sprite = sprite;
+        }
 
         public void SetAvatarTitle(string text) => _titleAvatar.text = text;
 
