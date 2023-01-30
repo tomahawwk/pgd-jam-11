@@ -143,6 +143,7 @@ namespace Dialogue
             _menu.SetHoverVisible(false);
         }
         
+        
 
         //Bug: need check new one for bugs
         private IEnumerator OldSimpleDialogue(string text)
