@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Prototype;
 using UnityEngine;
 using Dialogue;
+
 namespace Prototype
 {
-    
     public class InteractiveItem : Interactive
     {
+        private DialogueSystem _dialogue => DialogueSystem.Instance;
+        
         [SerializeField] private string _itemName;
         [SerializeField] [TextArea] private string _itemDescription;
 
@@ -17,7 +16,6 @@ namespace Prototype
         [SerializeField] private InventoryWindow inventoryWindow;
         [SerializeField] private Inventory targetInventory;
         [SerializeField] private Item item;
-        private DialogueSystem _dialogue => DialogueSystem.Instance;
 
         public override void Interact()
         {
@@ -27,6 +25,7 @@ namespace Prototype
                 {
                     targetInventory.AddItem(item);
                     inventoryWindow.Redraw();
+
                     Destroy(gameObject);
                 }
             });

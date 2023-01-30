@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: mixamo.com
+    second: SlowRun
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,7 +36,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: SlowRun
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
@@ -60,17 +60,19 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.34313726
-        functionName: Footstep
+      - time: 0.36821562
+        functionName: FootStep
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5e0a8726df2896641b70df857b8cc7b6,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.8684533
-        functionName: Footstep
+        functionName: FootStep
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 5e0a8726df2896641b70df857b8cc7b6,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

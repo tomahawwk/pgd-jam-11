@@ -90,8 +90,6 @@ namespace Prototype.PlayerPhysics
                 {
                     _previousCollider = hit.collider;
                     OnGround?.Invoke(_previousCollider);
-
-                    Debug.Log("Change Ground");
                 }
             }
 

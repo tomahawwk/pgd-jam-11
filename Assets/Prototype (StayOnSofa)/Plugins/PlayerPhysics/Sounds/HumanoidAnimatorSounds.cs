@@ -1,37 +1,51 @@
+using Prototype.PlayerPhysics.Graphics;
 using UnityEngine;
 
 namespace Prototype.PlayerPhysics.Sounds
 {
-    [RequireComponent(typeof(Animator), typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource), typeof(HumanoidBodyGraphics))]
     public class HumanoidAnimatorSounds : MonoBehaviour
     {
-        [SerializeField] private PlayerBody _playerBody;
-        private AudioSource _audioSource;
+        private HumanoidBodyGraphics _humanoid => GetComponent<HumanoidBodyGraphics>();
         
-        private void Awake() => _audioSource = GetComponent<AudioSource>();
-        private void OnEnable() => _playerBody.OnGround += OnGround;
-        private void OnDisable() => _playerBody.OnGround -= OnGround;
-
+        private AudioSource _audioSource;
         private SoundPlatform _soundPlatform;
+        private void Awake() => _audioSource = GetComponent<AudioSource>();
+
+        private void OnEnable()
+        {
+            _humanoid.PlayerBody.OnGround += OnGround;
+            _humanoid.OnHumanoidStep += FootStep;
+        }
+
+        private void OnDisable()
+        {
+            _humanoid.PlayerBody.OnGround -= OnGround;
+            _humanoid.OnHumanoidStep -= FootStep;
+        }
+
 
         private void OnGround(Collider collider)
         {
             if (collider == null) return;
-            
+
             var touchObject = collider.gameObject;
 
             _soundPlatform = null;
-            
+
             if (touchObject.TryGetComponent(out SoundPlatform soundPlatform))
                 _soundPlatform = soundPlatform;
         }
 
-        public void Footstep()
+        private void FootStep()
         {
-            if (_soundPlatform == null) return;
-            
-            _audioSource.clip = _soundPlatform.GetRandomSound();
-            _audioSource.Play();
+            if (_humanoid.GetLerp() > 0.5f)
+            {
+                if (_soundPlatform == null) return;
+
+                _audioSource.clip = _soundPlatform.GetRandomSound();
+                _audioSource.Play();
+            }
         }
     }
 }
