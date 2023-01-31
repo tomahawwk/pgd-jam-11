@@ -94,6 +94,8 @@ namespace Dialogue
                         textBuffer += $"{colorHeader}{letter}{colorEnder}";
                         
                         _menu.SetText(textBuffer);
+                        _menu.PlaySound();
+
                         yield return waitMethod;
                     }
                 }
@@ -106,7 +108,9 @@ namespace Dialogue
                         
                         var letter = word[j];
                         textBuffer += letter;
+                        
                         _menu.SetText(textBuffer);
+                        _menu.PlaySound();
                         
                         yield return waitMethod;
                     }
@@ -194,6 +198,18 @@ namespace Dialogue
             
             _menu.SetHoverVisible(false);
         }
+        
+        private IEnumerator AvatarSimpleDialogueDoubleQuestion(Sprite sprite, string text, string name, string question1, string question2, Action<bool> result)
+        {
+            _menu.SetQuestionAvatar(sprite);
+            yield return SimpleDialogueDoubleQuestion(text, name, question1, question2, result);
+        }
+        
+        private IEnumerator NullAvatarSimpleDialogueDoubleQuestion(string text, string name, string question1, string question2, Action<bool> result)
+        {
+            _menu.SetQuestionAvatar(null);
+            yield return SimpleDialogueDoubleQuestion(text, name, question1, question2, result);
+        }
 
         public void Dialogue(string text)
         {
@@ -207,7 +223,12 @@ namespace Dialogue
         
         public void DialogueDoubleQuestion(string name, string text, string question1, string question2, Action<bool> result)
         {
-            _dialogueQueue.Add(SimpleDialogueDoubleQuestion(text, name, question1, question2, result));
+            _dialogueQueue.Add(NullAvatarSimpleDialogueDoubleQuestion(text, name, question1, question2, result));
+        }
+        
+        public void DialogueDoubleQuestion(Sprite sprite, string name, string text, string question1, string question2, Action<bool> result)
+        {
+            _dialogueQueue.Add(AvatarSimpleDialogueDoubleQuestion(sprite, text, name, question1, question2, result));
         }
 
         private IEnumerator AllDialogueCoroutine(IEnumerable<IEnumerator> dialogues)
