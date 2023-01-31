@@ -6,7 +6,8 @@ namespace Prototype
     public class InteractiveItem : Interactive
     {
         private DialogueSystem _dialogue => DialogueSystem.Instance;
-        
+
+        [SerializeField] private Sprite _itemSprite;
         [SerializeField] private string _itemName;
         [SerializeField] [TextArea] private string _itemDescription;
 
@@ -19,7 +20,7 @@ namespace Prototype
 
         public override void Interact()
         {
-            _dialogue.DialogueDoubleQuestion(_itemName, _itemDescription, _positive, _negative, result =>
+            _dialogue.DialogueDoubleQuestion(_itemSprite, _itemName, _itemDescription, _positive, _negative, result =>
             {
                 if (result)
                 {
