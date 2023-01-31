@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Prototype__Sollner_.Inventory.UI
 {
-    [RequireComponent(typeof(RectTransform))]
+    [RequireComponent(typeof(RectTransform), typeof(BumpEffect))]
     public class SlotUI : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         private RectTransform _rectTransform;
@@ -19,10 +19,12 @@ namespace Prototype__Sollner_.Inventory.UI
         [SerializeField] private GameObject _propertyLayer;
         
         private void Awake() => _rectTransform = GetComponent<RectTransform>();
+        private BumpEffect _bumpEffect => GetComponent<BumpEffect>();
 
         public Item Item { private set; get;}
         private InventoryUI _inventory;
-        
+
+        public void Bump() => _bumpEffect.Play();
         public void Create(Item item, InventoryUI ui)
         {
             Item = item;
@@ -31,8 +33,10 @@ namespace Prototype__Sollner_.Inventory.UI
             _image.sprite = null;
 
             if (item != null)
+            {
                 _image.sprite = item.Icon;
-            
+            }
+
             _image.gameObject.SetActive(item != null);
         }
 
@@ -45,6 +49,8 @@ namespace Prototype__Sollner_.Inventory.UI
             {
                 if (Item != null)
                 {
+                    Bump();
+
                     _image.color = _onDragColor;
                     _inventory.SetCursorVisible(true);
                     _inventory.SetCursorIcon(Item.Icon);
@@ -71,7 +77,10 @@ namespace Prototype__Sollner_.Inventory.UI
                     if (overTouch.TryGetComponent(out SlotUI otherSlot))
                     {
                         if (otherSlot.Item != null)
-                            _inventory.TryCraft(Item, otherSlot.Item);
+                        {
+                            if (_inventory.TryCraft(Item, otherSlot.Item))
+                                otherSlot.Bump();
+                        }
                     }
                 }
             }
