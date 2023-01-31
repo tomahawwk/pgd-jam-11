@@ -1,31 +1,32 @@
-﻿using Dialogue;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Prototype.Triggers.Types
 {
     [RequireComponent(typeof(AudioSource))]
-    public class TriggerSoundBox : MonoBehaviour
+    public class TriggerSoundBox : OnPlayerTouchTrigger
     {
-        private BoxCollider _boxCollider => GetComponent<BoxCollider>();
-        private void OnValidate() => _boxCollider.isTrigger = true;
+        private AudioSource _audioSource;
+        private void Awake() => _audioSource = GetComponent<AudioSource>();
 
-        public AudioSource _audioSource;
-
-        private void Awake()
+        public override void OnPlayerTouch()
         {
-            _audioSource = GetComponent<AudioSource>();
+            if (!_audioSource.isPlaying)
+                _audioSource.PlayOneShot(_audioSource.clip, 0.7F);
         }
 
-        private void OnTriggerEnter(Collider other)
+        public override void Destroy()
         {
-            var touchObject = other.gameObject;
+            StartCoroutine(RoutineSounds());
+        }
 
-            if (touchObject.TryGetComponent(out Player _))
-            {
-                if (!_audioSource.isPlaying)
-                _audioSource.PlayOneShot(_audioSource.clip, 0.7F);
-                //Destroy(gameObject);
-            }
+        private IEnumerator RoutineSounds()
+        {
+            while (_audioSource.isPlaying)
+                yield return null;
+
+            Destroy(gameObject);
         }
     }
 }
