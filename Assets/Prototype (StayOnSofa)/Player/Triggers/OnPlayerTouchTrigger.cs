@@ -11,15 +11,20 @@ namespace Prototype.Triggers
 
         public abstract void OnPlayerTouch();
         
-        private void OnTriggerEnter(Collider other)
+        public virtual void OnTriggerEnter(Collider other)
         {
             var touchObject = other.gameObject;
             
             if (touchObject.TryGetComponent(out Player _))
             {
                 OnPlayerTouch();
-                Destroy(gameObject);
+                Destroy();
             }
+        }
+
+        public virtual void Destroy()
+        {
+            Destroy(gameObject);
         }
     }
 }

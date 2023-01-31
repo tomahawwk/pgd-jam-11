@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b628011b589f4c0a98b53d872a35c8ea, type: 3}
+  m_Name: DebugCraft
+  m_EditorClassIdentifier: 
+  _item1: {fileID: 11400000, guid: a77866923ee03cf41a8ac1460f8ff5c5, type: 2}
+  _item2: {fileID: 11400000, guid: 1e5d1c12c2c9ac44da450bba985f2844, type: 2}
+  _outPut: {fileID: 11400000, guid: d82d67469b8504942955d2e512693def, type: 2}
