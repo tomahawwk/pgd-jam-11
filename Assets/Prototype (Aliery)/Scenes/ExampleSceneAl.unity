@@ -2828,7 +2828,7 @@ MonoBehaviour:
   _positive: "\u0414\u0430"
   _negative: "\u041D\u0435\u0442"
   inventoryWindow: {fileID: 0}
-  targetInventory: {fileID: 1995228101}
+  targetInventory: {fileID: 0}
   item: {fileID: 11400000, guid: a77866923ee03cf41a8ac1460f8ff5c5, type: 2}
 --- !u!1 &1905312454
 GameObject:
@@ -3127,18 +3127,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1995228101 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1995228101, guid: 03d1d499b75a88a4d86983e61e55fe6b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1431465023}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59fd298327af824459821d72e3a21de6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2004866532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,7 +3284,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7358743556917795016, guid: 00bf31c37eb84da4c8131f73d2304a8b,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3b69a75e6ab6de34a9039b00e248e4bd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6707aa06c3b268f4d95e17672122b9f3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
