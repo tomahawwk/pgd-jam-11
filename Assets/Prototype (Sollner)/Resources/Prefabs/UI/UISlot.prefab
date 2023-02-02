@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 8990339751664710202}
   - component: {fileID: 8990339751664710203}
   - component: {fileID: 8990339751664710205}
+  - component: {fileID: 8835140301350577859}
   m_Layer: 5
   m_Name: UISlot
   m_TagString: Untagged
@@ -446,9 +447,23 @@ MonoBehaviour:
   _image: {fileID: 8990339752933833664}
   _property: {fileID: 5974866309776325464}
   _title: {fileID: 2300925967342119547}
-  _onDragColor: {r: 1, g: 1, b: 1, a: 0.69411767}
+  _onDragColor: {r: 1, g: 1, b: 1, a: 0.44705883}
   _unDragColor: {r: 1, g: 1, b: 1, a: 1}
   _propertyLayer: {fileID: 2952469232929244100}
+--- !u!114 &8835140301350577859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8990339751664710201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c99453446324d709d4c39f67f7e5dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 12
+  _multiply: 0.15
 --- !u!1 &8990339752933833662
 GameObject:
   m_ObjectHideFlags: 0

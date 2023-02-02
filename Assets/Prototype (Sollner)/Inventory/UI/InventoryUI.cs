@@ -50,9 +50,9 @@ public class InventoryUI : MonoBehaviour
             slot.Create(null, this);
     }
 
-    public void TryCraft(Item item1, Item item2)
+    public bool TryCraft(Item item1, Item item2)
     {
-        _inventory.TryCraft(item1, item2);
+        return _inventory.TryCraft(item1, item2);
     }
 
     public void ReDraw()

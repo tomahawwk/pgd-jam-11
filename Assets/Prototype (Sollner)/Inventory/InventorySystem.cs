@@ -39,9 +39,9 @@ public class InventorySystem : MonoSingleton<InventorySystem>
 
     public bool HasItem(Item item) => _item.Contains(item);
 
-    public void TryCraft(Item item1, Item item2)
+    public bool TryCraft(Item item1, Item item2)
     {
-        if (!_item.Contains(item1) || !_item.Contains(item2)) return;
+        if (!_item.Contains(item1) || !_item.Contains(item2)) return false;
         
         bool craftable = false;
         Receipt outReceipt = null;
@@ -63,6 +63,8 @@ public class InventorySystem : MonoSingleton<InventorySystem>
             
             RemoveItem(item1);
         }
+
+        return craftable;
     }
 
     public void RemoveItem(Item item)

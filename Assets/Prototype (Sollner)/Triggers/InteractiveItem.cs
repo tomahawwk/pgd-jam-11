@@ -17,6 +17,8 @@ namespace Prototype
         
         public override void Interact()
         {
+            if (_item == null) return;
+
             _dialogue.DialogueDoubleQuestion(_item.Icon, _item.Title, _item.Property, _positive, _negative, result =>
             {
                 if (result)
