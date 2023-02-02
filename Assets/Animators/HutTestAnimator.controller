@@ -24,7 +24,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1280357192235107073}
+  m_DefaultState: {fileID: -2051860507773790487}
 --- !u!1102 &-2051860507773790487
 AnimatorState:
   serializedVersion: 6
@@ -33,7 +33,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Stand
-  m_Speed: 1
+  m_Speed: 0.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 4467887772539627346}
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 4781951162920444690, guid: 7c3965e22b9936a4091560a6d93660c5,
+  m_Motion: {fileID: -1246731831762816583, guid: 7c3965e22b9936a4091560a6d93660c5,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 
