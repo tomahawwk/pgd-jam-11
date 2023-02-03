@@ -12,11 +12,11 @@ namespace Dialogue
         [SerializeField] private DialogueMenu _menuPrefab;
         private DialogueMenu _menu;
 
-        [SerializeField] private float _timerPerLetter = 0.05f;
+        [SerializeField] private float _timerPerLetter = 0.04f;
         [SerializeField] private float _fastTimerPerLetter = 0.01f;
         [SerializeField] private float _timeToAutoClose = 3f;
 
-        private List<IEnumerator> _dialogueQueue;
+        private List<IEnumerator> _dialogueQueue = new ();
         
         private WaitForSeconds _waitTillLetter;
         private WaitForSeconds _waitTillFastLetter;
@@ -27,8 +27,6 @@ namespace Dialogue
 
         private void Awake()
         {
-            _dialogueQueue = new();
-            
             _waitTillLetter = new WaitForSeconds(_timerPerLetter);
             _waitTillFastLetter = new WaitForSeconds(_fastTimerPerLetter);
         }

@@ -12,23 +12,13 @@ namespace Prototype__Sollner_.Inventory
 
         [Space]
         [SerializeField] private Item _outPut;
-
-        private List<Item> _craftBuffer;
         
         public bool CheckCraft(Item item1, Item item2)
         {
-            _craftBuffer.Clear();
-            
-            _craftBuffer.Add(_item1);
-            _craftBuffer.Add(_item2);
+            int craftCache = _item1.GetHashCode() ^ _item2.GetHashCode();
+            int recipeCache = item2.GetHashCode() ^ item1.GetHashCode();
 
-            if (_craftBuffer.Contains(item1))
-                _craftBuffer.Remove(item1);
-            
-            if (_craftBuffer.Contains(item2))
-                _craftBuffer.Remove(item2);
-
-            return _craftBuffer.Count == 0;
+            return craftCache == recipeCache;
         }
 
         public Item GetOutput() => _outPut;
