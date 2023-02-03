@@ -1,4 +1,3 @@
-using System;
 using Prototype__Sollner_.Inventory.UI;
 using UnityEngine;
 using UnityEngine.UI;

@@ -92,18 +92,18 @@ namespace Prototype__Sollner_.Inventory.UI
                 _inventory.SetCursor(Input.mousePosition);
         }
 
-        private bool _properyDrag;
+        private bool _propertyDrag;
         
         public void OnPointerEnter(PointerEventData eventData)
         {
-            if (!_properyDrag)
+            if (!_propertyDrag)
             {
                 if (Item != null)
                 {
                     _property.text = Item.Property;
                     _title.text = Item.Title;
                     
-                    _properyDrag = true;
+                    _propertyDrag = true;
                     
                     _propertyLayer.SetActive(true);
                 }
@@ -112,10 +112,10 @@ namespace Prototype__Sollner_.Inventory.UI
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            if (_properyDrag)
+            if (_propertyDrag)
             {
                 _propertyLayer.SetActive(false);
-                _properyDrag = false;
+                _propertyDrag = false;
             }
         }
     }
