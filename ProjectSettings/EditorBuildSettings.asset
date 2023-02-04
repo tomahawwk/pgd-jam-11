@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype (StayOnSofa)/Scenes/ExampleHomeScene.unity
     guid: c81cc1d27676e2c46b2dba2880cb886c
+  - enabled: 1
+    path: Assets/Prototype (Sollner)/SollnerTestScene.unity
+    guid: 918843eb0717d1a43892ce926fd1b0c5
+  - enabled: 1
+    path: Assets/Prototype (Sollner)/SollnerTestScene2.unity
+    guid: 464135560328cdd4ab54583b004aa571
   m_configObjects: {}
