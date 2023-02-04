@@ -615,7 +615,7 @@ MonoBehaviour:
   _avatar: {fileID: 6143386730995306345}
   _avatarQuestion: {fileID: 4081577419017511237}
   _hover: {fileID: 4233356374966328582}
-  _click: {fileID: 8300000, guid: 3fade0931cf034d49a700a8ea218597d, type: 3}
+  _click: {fileID: 8300000, guid: e3eb59ffb12b26442a42f3f371657a48, type: 3}
 --- !u!82 &5191600735723812678
 AudioSource:
   m_ObjectHideFlags: 0
@@ -627,7 +627,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 235034724761374806, guid: 00bf31c37eb84da4c8131f73d2304a8b,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 3fade0931cf034d49a700a8ea218597d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e3eb59ffb12b26442a42f3f371657a48, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.041
   m_Pitch: 1
@@ -638,7 +638,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -703,7 +703,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

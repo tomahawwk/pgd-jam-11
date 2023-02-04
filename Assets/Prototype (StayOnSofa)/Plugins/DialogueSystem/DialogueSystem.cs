@@ -71,6 +71,8 @@ namespace Dialogue
 
             var words = text.Split(' ');
 
+            _menu.PlaySound();
+
             for (int i = 0; i < words.Length; i++)
             {
                 var word = words[i];
@@ -92,7 +94,7 @@ namespace Dialogue
                         textBuffer += $"{colorHeader}{letter}{colorEnder}";
                         
                         _menu.SetText(textBuffer);
-                        _menu.PlaySound();
+                        
 
                         yield return waitMethod;
                     }
@@ -108,7 +110,6 @@ namespace Dialogue
                         textBuffer += letter;
                         
                         _menu.SetText(textBuffer);
-                        _menu.PlaySound();
                         
                         yield return waitMethod;
                     }
