@@ -6,9 +6,14 @@ namespace Prototype.PlayerPhysics.Sounds
     {
         [SerializeField] private FootSoundContainer _container;
 
-        public AudioClip GetRandomSound()
+        public AudioClip GetRandomSoundL()
         {
-            return _container.GetRandomAudio();
+            return _container.GetRandomAudioL();
+        }
+
+        public AudioClip GetRandomSoundR()
+        {
+            return _container.GetRandomAudioR();
         }
     }
 }

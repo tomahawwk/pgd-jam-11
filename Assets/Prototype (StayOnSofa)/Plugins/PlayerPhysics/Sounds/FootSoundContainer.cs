@@ -7,11 +7,17 @@ namespace Prototype.PlayerPhysics.Sounds
 
     public class FootSoundContainer : ScriptableObject
     {
-        [SerializeField] private List<AudioClip> _clips;
+        [SerializeField] private List<AudioClip> _clips_L;
+        [SerializeField] private List<AudioClip> _clips_R;
 
-        public AudioClip GetRandomAudio()
+        public AudioClip GetRandomAudioL()
         {
-            return _clips[Random.Range(0, _clips.Count)];
+            return _clips_L[Random.Range(0, _clips_L.Count)];
+        }
+
+        public AudioClip GetRandomAudioR()
+        {
+            return _clips_R[Random.Range(0, _clips_R.Count)];
         }
     }
 }

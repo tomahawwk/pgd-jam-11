@@ -58,14 +58,14 @@ ModelImporter:
       curves: []
       events:
       - time: 0.31941143
-        functionName: FootStep
+        functionName: FootStepR
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.81122386
-        functionName: FootStep
+        functionName: FootStepL
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

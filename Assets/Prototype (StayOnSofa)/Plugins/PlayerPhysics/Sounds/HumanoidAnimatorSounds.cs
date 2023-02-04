@@ -15,13 +15,13 @@ namespace Prototype.PlayerPhysics.Sounds
         private void OnEnable()
         {
             _humanoid.PlayerBody.OnGround += OnGround;
-            _humanoid.OnHumanoidStep += FootStep;
+            _humanoid.OnHumanoidStep += FootStepL;
         }
 
         private void OnDisable()
         {
             _humanoid.PlayerBody.OnGround -= OnGround;
-            _humanoid.OnHumanoidStep -= FootStep;
+            _humanoid.OnHumanoidStep -= FootStepL;
         }
 
 
@@ -37,13 +37,23 @@ namespace Prototype.PlayerPhysics.Sounds
                 _soundPlatform = soundPlatform;
         }
 
-        private void FootStep()
+        private void FootStepL()
         {
             if (_humanoid.GetLerp() > 0.5f)
             {
                 if (_soundPlatform == null) return;
 
-                _audioSource.clip = _soundPlatform.GetRandomSound();
+                _audioSource.clip = _soundPlatform.GetRandomSoundL();
+                _audioSource.Play();
+            }
+        }
+        private void FootStepR()
+        {
+            if (_humanoid.GetLerp() > 0.5f)
+            {
+                if (_soundPlatform == null) return;
+
+                _audioSource.clip = _soundPlatform.GetRandomSoundR();
                 _audioSource.Play();
             }
         }
