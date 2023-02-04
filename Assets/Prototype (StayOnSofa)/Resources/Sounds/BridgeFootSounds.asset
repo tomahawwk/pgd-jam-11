@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701d193a6a4e4d26850eac1f4545c605, type: 3}
   m_Name: BridgeFootSounds
   m_EditorClassIdentifier: 
-  _clips: []
+  _clips_L:
+  - {fileID: 8300000, guid: 81509adf5bf4012459da895f2112b7d9, type: 3}
+  - {fileID: 8300000, guid: 30895c2e6de39c246a5e41fa9c43f88b, type: 3}
+  - {fileID: 8300000, guid: 9b1f242f887705e4ebaa90fa5c78639a, type: 3}
+  _clips_R:
+  - {fileID: 8300000, guid: 4c7dd078a06f72b4ab719546d282fbee, type: 3}
+  - {fileID: 8300000, guid: 1574fbfbd23d90c48ac919c3e29545c3, type: 3}
+  - {fileID: 8300000, guid: 5638354e3b8e3934781b9b5f4e290a08, type: 3}

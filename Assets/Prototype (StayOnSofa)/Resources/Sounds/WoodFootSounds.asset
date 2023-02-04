@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701d193a6a4e4d26850eac1f4545c605, type: 3}
   m_Name: WoodFootSounds
   m_EditorClassIdentifier: 
-  _clips:
-  - {fileID: 8300000, guid: 9b1f242f887705e4ebaa90fa5c78639a, type: 3}
-  - {fileID: 8300000, guid: 4c7dd078a06f72b4ab719546d282fbee, type: 3}
-  - {fileID: 8300000, guid: 1574fbfbd23d90c48ac919c3e29545c3, type: 3}
-  - {fileID: 8300000, guid: 5638354e3b8e3934781b9b5f4e290a08, type: 3}
+  _clips_L:
+  - {fileID: 8300000, guid: af2d79f1a301a5c4c9ede602eec82e64, type: 3}
+  - {fileID: 8300000, guid: dac50455280f37e4fa16b17b605368cd, type: 3}
+  - {fileID: 8300000, guid: 2b0cc673a93eb0249a1082f3ca8c2400, type: 3}
+  _clips_R:
+  - {fileID: 8300000, guid: 9b8fd8cdde4d03340b2f48609fb984f7, type: 3}
+  - {fileID: 8300000, guid: 30a177f8bf59e2249bbcde1a21efc9ca, type: 3}
+  - {fileID: 8300000, guid: 7fd57ae50ec5968458020b06817b32e1, type: 3}
