@@ -24,6 +24,7 @@ namespace Dialogue
             _button.onClick.AddListener(() =>
             {
                 onClick?.Invoke();
+                _button.onClick.RemoveAllListeners();
             });
         }
     }
