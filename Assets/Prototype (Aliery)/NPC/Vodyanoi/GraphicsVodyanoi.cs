@@ -14,25 +14,11 @@ public class GraphicsVodyanoi : MonoBehaviour
 
     public void PlayerIn()
     {
-        if (_animator.GetBool("Bye"))
-        {
-            _animator.SetBool("Bye", false);
-            _animator.SetBool("Appear", true);
-        }
-        else
-        {
-            _animator.SetBool("Appear", false);
-            _animator.SetBool("Idle", true);
-        }
-
+        _animator.Play("AppearTrigger");
     }
 
     public void PlayerOut()
     {
-        if (_animator.GetBool("Idle"))
-        {
-            _animator.SetBool("Idle", false);
-            _animator.SetBool("Bye", true);
-        }
+        _animator.Play("DisappearTrigger");
     }
 }
