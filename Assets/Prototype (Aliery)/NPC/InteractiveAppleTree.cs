@@ -1,5 +1,6 @@
 using System;
 using Dialogue;
+using Prototype.Logic.Interactions;
 using Prototype.Plugins.FadeOutSystem;
 using SaveState;
 using UnityEngine;
@@ -17,8 +18,6 @@ namespace Prototype.Logic
 
         [SerializeField] private GameObject _haveStair;
         [SerializeField] private GameObject _haveApple;
-        [SerializeField] private GameObject _bakeItem;
-
         private AudioSource _audio => GetComponent<AudioSource>();
         private DialogueSystem _dialogueSystem => DialogueSystem.Instance;
         private SaveStateSystem _saveStateSystem => SaveStateSystem.Instance;
@@ -30,8 +29,6 @@ namespace Prototype.Logic
 
         [SerializeField] private Item _apple;
         [SerializeField] private Item _stair;
-        [SerializeField] private Item _give;
-
         private void SayBun(string text) => _dialogueSystem.DialogueAvatar(BunTitle, text, _bunAvatar);
         private void AgaSay(string text) => _dialogueSystem.DialogueAvatar(YagaTitle, text, _agaAvatar);
 
@@ -75,6 +72,7 @@ namespace Prototype.Logic
                         {
                             if (result)
                             {
+                                SceneRemover.RemoveCurrentScene();
                                 _saveStateSystem.SaveState(SaveBreakKey, true);
 
                                 _fade.FadeOut(() =>
