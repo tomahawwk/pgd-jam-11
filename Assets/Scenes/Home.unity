@@ -1279,8 +1279,8 @@ MonoBehaviour:
   _openBake: {fileID: 1543584600}
   _closeBake: {fileID: 1189251213}
   _bakeItem: {fileID: 147013268}
-  _bunAvatar: {fileID: 21300000, guid: c1a7eaedb3199154eb13daf9c908de6e, type: 3}
-  _agaAvatar: {fileID: 21300000, guid: 21a255f83d8c1bb498b48a9bb9cd2de7, type: 3}
+  _bunAvatar: {fileID: 0}
+  _agaAvatar: {fileID: 0}
   _axe: {fileID: 11400000, guid: b63a2e82ac927ad4b9f6b54f264eca1a, type: 2}
   _give: {fileID: 11400000, guid: 57c519d915a70df4c9b9439b9dc3dd12, type: 2}
 --- !u!135 &467060072
