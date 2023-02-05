@@ -4,6 +4,7 @@ using Prototype.Plugins.FadeOutSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using Prototype.Logic.Interactions;
 
 namespace Prototype
 {
@@ -25,6 +26,9 @@ namespace Prototype
 
         [SerializeField] private Sprite _vodyanAvatar;
         [SerializeField] private Sprite _agaAvatar;
+
+        [SerializeField] private Item _saucer;
+        [SerializeField] private Item _harpun;
 
         private void SayVodyan(string text) => _dialogueSystem.DialogueAvatar(VodyanTitle, text, _vodyanAvatar);
         private void SayAga(string text) => _dialogueSystem.DialogueAvatar(YagaTitle, text, _agaAvatar);
@@ -52,7 +56,21 @@ namespace Prototype
             }
             else
             {
-
+                if (_inventorySystem.HasItem(_saucer))
+                {
+                    SayAga("Держи. Погляди на что-то, кроме своих болот — и избушку мою больше не тронь.");
+                    SayVodyan("Спасибо, Яговна, удружила! Сниму я свои чары с избушки.");
+                    SayVodyan("Вот, держи, налови себе рыбки.");
+                    SayAga("И как же энтим пользоваться?");
+                    SayVodyan("Ткни острым концом.");
+                    
+                    _inventorySystem.RemoveItem(_saucer);
+                    _inventorySystem.TryAddItem(_harpun);
+                }
+                else
+                {
+                    SayVodyan("Поговорил бы кто со мной…");
+                }
             }
         }
     }
