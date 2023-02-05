@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d185f458019954d468f6d368aef6106b
+  - enabled: 1
+    path: Assets/Scenes/StartCutScene.unity
+    guid: 8a885b605ca86924bb1eb1545bea5d90
+  - enabled: 1
     path: Assets/Prototype (StayOnSofa)/Scenes/ExampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -24,6 +30,11 @@ EditorBuildSettings:
     path: Assets/Scenes/LightForest.unity
     guid: b70fa5bb83de6aa44a81101800580b4f
   - enabled: 1
+<<<<<<< Updated upstream
     path: Assets/Scenes/Swamp.unity
     guid: 3732892419b2d9f41934fcdaf343ec5c
+=======
+    path: Assets/Scenes/EndCutScene.unity
+    guid: d81aab7c9e3994040ad4b66f2f316fe1
+>>>>>>> Stashed changes
   m_configObjects: {}
