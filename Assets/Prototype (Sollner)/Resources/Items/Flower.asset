@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a946e686f76194b9b514d768eb59db, type: 3}
-  m_Name: Test 2
+  m_Name: Flower
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: Debug2
-  <Property>k__BackingField: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439
-    \u044F\u0449\u0438\u043A"
-  <Icon>k__BackingField: {fileID: 21300000, guid: c1a7eaedb3199154eb13daf9c908de6e,
-    type: 3}
+  <Title>k__BackingField: "\u0426\u0432\u0435\u0442\u043E\u0447\u0435\u043A"
+  <Property>k__BackingField: "\u041E\u0442\u0434\u0430\u0442\u044C \u0431\u044B \u0435\u0433\u043E
+    \u0447\u0443\u0434\u0438\u0449\u0443 \u043B\u0435\u0441\u043D\u043E\u043C\u0443\u2026"
+  <Icon>k__BackingField: {fileID: 0}

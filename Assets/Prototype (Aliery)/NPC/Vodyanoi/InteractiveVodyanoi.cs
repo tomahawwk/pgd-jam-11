@@ -3,69 +3,57 @@ using SaveState;
 using Prototype.Plugins.FadeOutSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace Prototype
 {
+    [RequireComponent(typeof(AudioSource))]
     public class InteractiveVodyanoi : Interactive
     {
-        private DialogueSystem _dialogue => DialogueSystem.Instance;
-        private FadeOutSystem _fadeOut => FadeOutSystem.Instance;
-        private SaveStateSystem _interactiveKey => SaveStateSystem.Instance;
+        private const string VodyanTitle = "Водяной";
+        private const string YagaTitle = "Яга";
 
-        [SerializeField] private Sprite _vodyanoi;
-        [SerializeField] private Sprite _babaYaga;
+        private string SaveFirstDialogue = nameof(InteractiveVodyanoi) + "Quest";
+        private string SaveHasItem = nameof(InteractiveVodyanoi) + "Has Quest Item";
 
-        private bool _firstDialogue = true;
 
-        private void Vodyanoi(string text)
+        private AudioSource _audio => GetComponent<AudioSource>();
+        private DialogueSystem _dialogueSystem => DialogueSystem.Instance;
+        private SaveStateSystem _saveStateSystem => SaveStateSystem.Instance;
+        private InventorySystem _inventorySystem => InventorySystem.Instance;
+        private FadeOutSystem _fade => FadeOutSystem.Instance;
+
+        [SerializeField] private Sprite _vodyanAvatar;
+        [SerializeField] private Sprite _agaAvatar;
+
+        private void SayVodyan(string text) => _dialogueSystem.DialogueAvatar(VodyanTitle, text, _vodyanAvatar);
+        private void SayAga(string text) => _dialogueSystem.DialogueAvatar(YagaTitle, text, _agaAvatar);
+
+        private void SayVodyan(string text, string question1, string question2, Action<bool> result)
         {
-            _dialogue.DialogueAvatar("Водяной", text, _vodyanoi);
+            _dialogueSystem.DialogueDoubleQuestion(_vodyanAvatar, VodyanTitle, text, question1, question2, result);
         }
 
-        private void BabaYaga(string text)
+        private void SayAga(string text, string question1, string question2, Action<bool> result)
         {
-            _dialogue.DialogueAvatar("Баба Яга", text, _babaYaga);
+            _dialogueSystem.DialogueDoubleQuestion(_agaAvatar, YagaTitle, text, question1, question2, result);
         }
 
         public override void Interact()
         {
-            if (_firstDialogue)
+            if (!_saveStateSystem.GetState(SaveFirstDialogue))
             {
-                _firstDialogue = false;
+                SayVodyan("Здравствуй, Яговна! Видел, как ты летела — забыла, что у тебя для этого ступа есть?");
+                SayAga("Признавайся, рыба дохлая, ты моей дочурке помог избушку заколдовать?");
+                SayVodyan("Я, Яговна, я! Мне на этих болотах так скучно — хоть топись. Она как предложила твою избушку закрутить, я даже не раздумывал. Хоть на что-то новенькое погляжу.");
+                SayAga("Вот нечисть пошла — ради хлеба и зрелищ готовы погромы учинять и имущество портить.");
 
-
-                Vodyanoi("Здравствуй, Яговна! Видел, как ты летела — забыла, что у тебя для этого ступа есть?");
-                BabaYaga("Признавайся, рыба дохлая, ты моей дочурке помог избушку заколдовать?");
-                Vodyanoi("Я, Яговна, я! Мне на этих болотах так скучно — хоть топись. Она как предложила твою избушку закрутить, я даже не раздумывал. Хоть на что-то новенькое погляжу.");
-                BabaYaga("Вот нечисть пошла — ради хлеба и зрелищ готовы погромы учинять и имущество портить.");
-
-
+                _saveStateSystem.SaveState(SaveFirstDialogue, true);
             }
             else
             {
-                Vodyanoi("Поговорил бы кто со мной…");
+
             }
-            //    _dialogue.DialogueDoubleQuestion(_catByun, "Кот Баюн", "Чем помочь, хозяйка?",
-            //    "Лестница", "Ничем, пока", result =>
-            //    {
-            //        if (result)
-            //        {
-            //            _dialogue.DialogueDoubleQuestion(_catByun, "Кот Баюн", "Вот и дожила ты, старая, до того, что сама по деревьям лазаешь…",
-            //            "О, спасибо", "Мог бы и помочь!", result =>
-            //            {
-            //                if (result)
-            //                    _dialogue.DialogueAvatar("Кот Баюн", "Незачто", _catByun);
-            //                else
-            //                    _dialogue.DialogueAvatar("Кот Баюн", "Сама справишься!", _catByun);
-            //            });
-            //        }
-            //        else
-            //        {
-            //            _dialogue.DialogueAvatar("Кот Баюн", "Бывай!", _catByun);
-            //        }
-            //    }
-            //);
-            //}
         }
     }
 }

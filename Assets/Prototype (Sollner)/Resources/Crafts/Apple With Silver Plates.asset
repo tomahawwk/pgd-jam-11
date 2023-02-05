@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b628011b589f4c0a98b53d872a35c8ea, type: 3}
+  m_Name: Apple With Silver Plates
+  m_EditorClassIdentifier: 
+  _item1: {fileID: 11400000, guid: 459c5ba9a9c90b644a65b2796855ecec, type: 2}
+  _item2: {fileID: 11400000, guid: 57c519d915a70df4c9b9439b9dc3dd12, type: 2}
+  _outPut: {fileID: 11400000, guid: a7396c1eff577d640a684a3fcf9a3c52, type: 2}

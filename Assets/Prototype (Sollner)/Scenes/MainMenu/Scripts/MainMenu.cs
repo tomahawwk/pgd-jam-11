@@ -17,7 +17,6 @@ namespace Prototype
 
         public void ExitGame()
         {
-            Debug.Log("Game Has Close");
             Application.Quit();
             UnityEditor.EditorApplication.isPlaying = false;
         }

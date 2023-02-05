@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a946e686f76194b9b514d768eb59db, type: 3}
-  m_Name: Test 3
+  m_Name: Silk
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: "\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442"
-  <Property>k__BackingField: "\u0422\u0435\u0441\u0442\u043E\u0432\u044B\u0439"
-  <Icon>k__BackingField: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225,
+  <Title>k__BackingField: "\u041D\u0438\u0442\u043A\u0438"
+  <Property>k__BackingField: "\u041E\u0431\u044B\u0447\u043D\u044B\u0435 \u043D\u0438\u0442\u043A\u0438"
+  <Icon>k__BackingField: {fileID: 21300000, guid: 03cefa94d5aa9d74993fb2138af9d607,
     type: 3}

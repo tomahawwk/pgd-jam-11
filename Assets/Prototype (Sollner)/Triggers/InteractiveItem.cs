@@ -2,11 +2,13 @@ using System;
 using UnityEngine;
 using Dialogue;
 using SaveState;
+using UnityEngine.Events;
 
 namespace Prototype
 {
     public class InteractiveItem : Interactive
     {
+        [SerializeField] public UnityEvent OnPickUp;
         public Action<bool> OnGraphicsState;
         
         private DialogueSystem _dialogue => DialogueSystem.Instance;
@@ -54,6 +56,7 @@ namespace Prototype
                         return;
                     }
                     
+                    OnPickUp?.Invoke();
                     _saveState.SaveState(_item.GetHashCode(), true);
                     Destroy(gameObject);
                 }

@@ -186,8 +186,8 @@ ModelImporter:
       name: Hut:StandUpState
       takeName: Armature|ArmatureAction
       internalID: -6363362177140661055
-      firstFrame: 24
-      lastFrame: 37
+      firstFrame: 37
+      lastFrame: 82
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

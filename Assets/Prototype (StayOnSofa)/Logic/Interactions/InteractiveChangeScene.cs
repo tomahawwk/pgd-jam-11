@@ -3,6 +3,7 @@ using Dialogue;
 using Prototype;
 using Prototype.Home.Details;
 using Prototype.Logic.CameraUtils;
+using Prototype.Logic.Interactions;
 using Prototype.Plugins.FadeOutSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,8 +11,6 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(AudioSource))]
 public class InteractiveChangeScene : Interactive
 {
-    private static int _sceneNumber;
-
     [SerializeField] private AudioSource _audioCrows;
     private AudioSource _audio => GetComponent<AudioSource>();
     private DialogueSystem _dialogue => DialogueSystem.Instance;
@@ -45,13 +44,8 @@ public class InteractiveChangeScene : Interactive
             if (result)
             {
                 _isUsed = true;
-                
-                var scene = _scenes[_sceneNumber];
-                _sceneNumber += 1;
 
-                if (_sceneNumber > _scenes.Length - 1)
-                    _sceneNumber = 0;
-
+                var scene = SceneRemover.GetRandomScene();
                 _sceneToApply = scene;
 
                 StartCoroutine(RoutineChangeSceneLogic());
