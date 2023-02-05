@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.028324515, g: 0.029266424, b: 0.029352136, a: 1}
+  m_IndirectSpecularColor: {r: 0.02840343, g: 0.029227104, b: 0.029323913, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6571,14 +6571,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72546476f6723046a5013d6102204d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openBake: {fileID: 0}
-  _closeBake: {fileID: 0}
-  _bakeItem: {fileID: 0}
   _bunAvatar: {fileID: 0}
   _agaAvatar: {fileID: 0}
-  _items: []
   _axe: {fileID: 0}
   _apple: {fileID: 0}
+  _saucer: {fileID: 0}
+  _appleSilverPlate: {fileID: 0}
+  _stair: {fileID: 0}
+  _harpun: {fileID: 0}
+  _goldfish: {fileID: 0}
+  _yarn: {fileID: 0}
+  _viteyka: {fileID: 0}
+  _magicSphere: {fileID: 0}
+  _leyka: {fileID: 0}
+  _flower: {fileID: 0}
 --- !u!135 &296827592
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -29071,7 +29077,7 @@ TerrainCollider:
   m_GameObject: {fileID: 762141867}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: d304dc43c5a03944cb82b08dfd8708ce, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 50cf60b55f62f7e49b21917aa187caa0, type: 2}
   m_EnableTreeColliders: 1
 --- !u!218 &762141870
 Terrain:
@@ -29082,7 +29088,7 @@ Terrain:
   m_GameObject: {fileID: 762141867}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: d304dc43c5a03944cb82b08dfd8708ce, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: 50cf60b55f62f7e49b21917aa187caa0, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -75249,8 +75255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c740029b53f5a98408e5a60b549d9af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vodyanoi: {fileID: 21300000, guid: 8325d4ef0a6eb3d43952aff8a06d9f45, type: 3}
-  _babaYaga: {fileID: 21300000, guid: 21a255f83d8c1bb498b48a9bb9cd2de7, type: 3}
+  _vodyanAvatar: {fileID: 0}
+  _agaAvatar: {fileID: 0}
 --- !u!114 &1929128784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75263,6 +75269,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd15313cb59231e45b774cc67db56f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1929128785
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247099423}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1944517056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: eaf86392fe50a5b46a5683901dee11dd,
