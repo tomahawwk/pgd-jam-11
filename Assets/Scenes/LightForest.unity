@@ -15751,6 +15751,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: house
       objectReference: {fileID: 0}
+    - target: {fileID: 8444186091671679281, guid: c5d5388dfc5bada4a9440e4c6a9baefe,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 47d5daa1e0ed5bb48abaed2c1f603b0a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5d5388dfc5bada4a9440e4c6a9baefe, type: 3}
 --- !u!1 &626647257 stripped
@@ -54350,7 +54355,7 @@ Terrain:
   m_GameObject: {fileID: 5858199481039256697}
   m_Enabled: 1
   serializedVersion: 6
-  m_TerrainData: {fileID: 15600000, guid: 8e0cc9965b4cdb94e928fa12e4c18271, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: d65c938a23e16f64fb4a29bcb91fffb4, type: 2}
   m_TreeDistance: 5000
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
@@ -54399,7 +54404,7 @@ TerrainCollider:
   m_GameObject: {fileID: 5858199481039256697}
   m_Material: {fileID: 0}
   m_Enabled: 1
-  m_TerrainData: {fileID: 15600000, guid: 8e0cc9965b4cdb94e928fa12e4c18271, type: 2}
+  m_TerrainData: {fileID: 15600000, guid: d65c938a23e16f64fb4a29bcb91fffb4, type: 2}
   m_EnableTreeColliders: 1
 --- !u!114 &5858199481039256704
 MonoBehaviour:
