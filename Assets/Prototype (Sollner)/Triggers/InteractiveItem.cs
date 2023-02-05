@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Dialogue;
 using SaveState;
@@ -6,6 +7,8 @@ namespace Prototype
 {
     public class InteractiveItem : Interactive
     {
+        public Action<bool> OnGraphicsState;
+        
         private DialogueSystem _dialogue => DialogueSystem.Instance;
         private InventorySystem _inventory => InventorySystem.Instance;
         private SaveStateSystem _saveState => SaveStateSystem.Instance;
@@ -20,11 +23,21 @@ namespace Prototype
 
         private void Start()
         {
+            UpdateGraphics();
+        }
+
+        public void UpdateGraphics()
+        {
+            OnGraphicsState?.Invoke(true);
+            
             if (_item == null)
                 return;
-            
+
             if (_saveState.GetState(_item.GetHashCode()))
+            {
                 gameObject.SetActive(false);
+                OnGraphicsState?.Invoke(false);
+            }
         }
 
         public override void Interact()
