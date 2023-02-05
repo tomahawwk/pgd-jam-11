@@ -15,7 +15,7 @@ namespace Prototype
 
         public override void Interact()
         {
-            _dialogue.DialogueAvatar("Ѕаба яга", "ћ, какое €блочко! ’оть срывай и трави им дочурку.", _secondPersona);
+            _dialogue.DialogueAvatar("Ѕаба яга", "ћ-м-м, какое €блочко! ’оть срывай и трави им дочурку.", _secondPersona);
         }
     }
 }
