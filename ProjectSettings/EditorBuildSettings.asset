@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Swamp.unity
     guid: 3732892419b2d9f41934fcdaf343ec5c
+  - enabled: 1
+    path: Assets/Scenes/DarkForest.unity
+    guid: c5f84f69a4c91e447b3f15c2380669ca
   m_configObjects: {}
