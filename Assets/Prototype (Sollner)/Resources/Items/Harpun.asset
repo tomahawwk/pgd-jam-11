@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6a946e686f76194b9b514d768eb59db, type: 3}
-  m_Name: Test 2
+  m_Name: Harpun
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: Debug2
-  <Property>k__BackingField: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439
-    \u044F\u0449\u0438\u043A"
-  <Icon>k__BackingField: {fileID: 21300000, guid: c1a7eaedb3199154eb13daf9c908de6e,
-    type: 3}
+  <Title>k__BackingField: "\u0413\u0430\u0440\u043F\u0443\u043D"
+  <Property>k__BackingField: "\u0422\u044B\u043A\u0430\u0442\u044C \u043E\u0441\u0442\u0440\u044B\u043C
+    \u043A\u043E\u043D\u0446\u043E\u043C."
+  <Icon>k__BackingField: {fileID: 0}
