@@ -18,11 +18,6 @@ namespace Prototype
         private string SaveFirstDialogue = nameof(InteractiveBYUN) + "Quest";
         private string SaveHasItem = nameof(InteractiveBYUN) + "Has Quest Item";
 
-        [SerializeField] private GameObject _openBake;
-        [SerializeField] private GameObject _closeBake;
-        [SerializeField] private GameObject _bakeItem;
-
-
 
         private AudioSource _audio => GetComponent<AudioSource>();
         private DialogueSystem _dialogueSystem => DialogueSystem.Instance;
@@ -37,7 +32,17 @@ namespace Prototype
 
         [SerializeField] private Item _axe;
         [SerializeField] private Item _apple;
-        
+        [SerializeField] private Item _saucer;
+        [SerializeField] private Item _appleSilverPlate;
+        [SerializeField] private Item _stair;
+        [SerializeField] private Item _harpun;
+        [SerializeField] private Item _goldfish;
+        [SerializeField] private Item _yarn;
+        [SerializeField] private Item _viteyka;
+        [SerializeField] private Item _magicSphere;
+        [SerializeField] private Item _leyka;
+        [SerializeField] private Item _flower;
+
         public Item GetItem()
         {
             foreach (var item in _items)
@@ -65,25 +70,6 @@ namespace Prototype
             _dialogueSystem.DialogueDoubleQuestion(_agaAvatar, YagaTitle, text, question1, question2, result);
         }
 
-       
-
-        private void Start()
-        {
-            CheckStateBun();
-        }
-        private void CheckStateBun()
-        {
-            if (_saveStateSystem.GetState(SaveFirstDialogue))
-            {
-                _openBake.SetActive(true);
-                _closeBake.SetActive(false);
-            }
-
-            //if (_saveStateSystem.GetState(SaveHasItem))
-            //{
-            //    _bakeItem.SetActive(false);
-            //}
-        }
 
         public override void Interact()
         {
@@ -111,13 +97,13 @@ namespace Prototype
                             }
                             else
                             {
-                                SayBun("Бывай!");
+                                SayBun("Удачи!");
                             }
                         });
                 }
                 else
                 {
-                    SayBun("Бывай!");
+                    SayBun("Удачи!");
                 }
             }
         }
@@ -126,7 +112,67 @@ namespace Prototype
         {
             if (item == _axe)
             {
-                SayBun("Бывай!");
+                SayBun("Давай в избушке по чему-нибудь долбанём, авось она  слушаться снова начнёт!");
+            }
+            else if (item == _apple)
+            {
+                SayBun("А как же ты дотянешься, хозяйка, что-то я ни ступы, ни метлы не вижу. Ужель по лесенке карабкаться будешь?");
+            }
+            else if (item == _saucer)
+            {
+                SayBun("В серебряном блюдце не хватает волшебства...");
+            }
+            else if (item == _appleSilverPlate)
+            {
+                SayBun("Этот водун такой унылый — всучить бы ему что-нибудь, чтобы хоть со стороны на веселье посмотрел. Где ж, хозяйка, твоё яблочко наливное на блюдечеке серебряном?");
+            }
+            else if (item == _stair)
+            {
+                SayBun("Вот и дожила ты, старая, до того, что сама по деревьям лазаешь…");
+            }
+            else if (item == _harpun)
+            {
+                SayBun("Я бы словил, да лапы марать неохота… Давай этим гарпуном наловим рыбки к обеду!");
+            }
+            else if (item == _goldfish)
+            {
+                SayBun("Давненько мы, бабка, ничем не лакомились. Ни молодца доброго, ни красной девицы, ни детишек румяных… Хоть бы рыбкой какой поживиться.");
+                
+                SayBun("Отдашь рыбку?",
+                    "Держи", "Не отдам", result =>
+                    {
+                        if (result)
+                        {
+                            _inventorySystem.RemoveItem(item);
+                            SayBun("Золотая рыбка? Ах, невелико угощеньице, но я готов его принять со всем великодушием. Может, я теперь сам смогу желания исполнять?");
+                            SayBun("Ты глянь-ка, могу! Снял я с твоей каморки часть чар. Эх, бабка, хила и немощна ты стала, со всем тебе помогать приходится.");
+                        }
+                        else
+                        {
+                            SayBun("Тебя бы, бабка, слопать, да уж больно костлявая.");
+                        }
+                    });
+
+            }
+            else if (item == _yarn)
+            {
+                SayBun("Смотать нити? Наверняка у нашей прядуньи Кикиморы найдётся, чем, только тебе просто так не даст, ты её, хозяйка, обидела.");
+            }
+            else if (item == _viteyka)
+            {
+                SayBun("Вот сколько я на своём веку повидал, одного понять не могу: это как же при сматывании на витейку получается клубочек?");
+            }
+            else if (item == _magicSphere)
+            {
+                SayBun("Вот сколько я на своём веку повидал, одного понять не могу: это как же при сматывании на витейку получается клубочек?");
+            }
+            else if (item == _leyka)
+            {
+                SayBun("Хозяйка, я где-то тут видел засохший росток. Если его полить, может, вырастет что-то путное?");
+            }
+            else if (item == _flower)
+            {
+                SayBun("Давно ли ты поливала цветы? Глядишь какой сухой найдешь, да и польёшь.");
             }
         }
     }
