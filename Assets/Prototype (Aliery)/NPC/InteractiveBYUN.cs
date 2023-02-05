@@ -35,12 +35,16 @@ namespace Prototype
 
         [SerializeField] private List<Item> _items;
 
+        [SerializeField] private Item _axe;
+        [SerializeField] private Item _apple;
+        
         public Item GetItem()
         {
             foreach (var item in _items)
             {
-                if (InventorySystem.Instance.HasItem(item))
+                if (InventorySystem.Instance.HasItem(item) && !_saveStateSystem.GetState("HasItem: " + item.Title))
                 {
+                    _saveStateSystem.SaveState("HasItem: " + item.Title, true);
                     return item;
                 }
             }
@@ -95,19 +99,34 @@ namespace Prototype
             }
             else
             {
+                var item = GetItem();
+                if (item != null)
+                {
+                    SayBun("Чем помочь, хозяйка?",
+                        item.Title, "Ничем, пока", result =>
+                        {
+                            if (result)
+                            {
+                                DialogeForItem(item);
+                            }
+                            else
+                            {
+                                SayBun("Бывай!");
+                            }
+                        });
+                }
+                else
+                {
+                    SayBun("Бывай!");
+                }
+            }
+        }
 
-                SayBun("Чем помочь, хозяйка?",
-                    "Лестница", "Ничем, пока", result =>
-                    {
-                        if (result)
-                        {
-                            SayBun("Типа помог");
-                        }
-                        else
-                        {
-                            SayBun("Бывай!");
-                        }
-                    });
+        private void DialogeForItem(Item item)
+        {
+            if (item == _axe)
+            {
+                SayBun("Бывай!");
             }
         }
     }
