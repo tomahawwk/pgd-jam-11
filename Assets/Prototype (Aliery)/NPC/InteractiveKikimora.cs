@@ -2,7 +2,6 @@ using Dialogue;
 using SaveState;
 using Prototype.Plugins.FadeOutSystem;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using System;
 
 namespace Prototype
@@ -25,6 +24,9 @@ namespace Prototype
 
         [SerializeField] private Sprite _kikimoraAvatar;
         [SerializeField] private Sprite _agaAvatar;
+
+        [SerializeField] private Item _flower;
+        [SerializeField] private Item _viteyka;
 
         private void SayKiki(string text) => _dialogueSystem.DialogueAvatar(KikimoraTitle, text, _kikimoraAvatar);
         private void SayAga(string text) => _dialogueSystem.DialogueAvatar(YagaTitle, text, _agaAvatar);
@@ -54,7 +56,17 @@ namespace Prototype
             }
             else
             {
-
+                if (_inventorySystem.HasItem((_flower)))
+                {
+                    SayAga("Вот тебе, чудище лесное, цветочек аленький. И не ходи на танцы, не пугай людей — не то ещё охоту объявят и к нам в лес заявятся, а у меня избушка не на ходу.");
+                    SayKiki("Ах, какое диво! Спасибо, вам, бабушка. Расколдую я вашу избушечку, так и быть. Вот, держите витейку — мне она на танцах не понадобится.");
+                    _inventorySystem.RemoveItem(_flower);
+                    _inventorySystem.TryAddItem(_viteyka);
+                }
+                else
+                {
+                    SayKiki("Может, на танцах мне впервые в жизни хоть коврижку, хоть цветочек какой-нибудь подарят…");
+                }
             }
         }
     }
