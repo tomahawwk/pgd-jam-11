@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1424,7 +1424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 18.850098, y: -324.99997}
+  m_AnchoredPosition: {x: 83.00006, y: -324.99997}
   m_SizeDelta: {x: 443.04, y: 90}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &686562399
@@ -2977,7 +2977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 18.850098, y: -210.09998}
+  m_AnchoredPosition: {x: 83.00006, y: -210.09998}
   m_SizeDelta: {x: 443.04, y: 90}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1178200600
@@ -4022,7 +4022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435"
+  m_text: "\u0418\u0437\u0431\u0443\u0448\u043A\u0430,"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: abd53476db0671742b093edb1eb92872, type: 2}
   m_sharedMaterial: {fileID: -4675004040974613649, guid: abd53476db0671742b093edb1eb92872,
@@ -4510,7 +4510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0438\u0433\u0440\u044B"
+  m_text: "\u0418\u0437\u0431\u0443\u0448\u043A\u0430!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: abd53476db0671742b093edb1eb92872, type: 2}
   m_sharedMaterial: {fileID: -4675004040974613649, guid: abd53476db0671742b093edb1eb92872,
@@ -4520,8 +4520,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288585374
-  m_fontColor: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 1}
+    rgba: 4293519849
+  m_fontColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4992,7 +4992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 18.850098, y: -439.89996}
+  m_AnchoredPosition: {x: 83, y: -439.89996}
   m_SizeDelta: {x: 443.04, y: 90}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1742729568
