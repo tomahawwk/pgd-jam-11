@@ -15,4 +15,5 @@ MonoBehaviour:
   <Title>k__BackingField: "\u042F\u0431\u043B\u043E\u043A\u043E"
   <Property>k__BackingField: "\u0422\u0430\u043A \u043A\u0440\u0430\u0441\u0438\u0432\u043E
     \u043D\u0430 \u0431\u043B\u044E\u0434\u0446\u0435 \u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0441\u044F"
-  <Icon>k__BackingField: {fileID: 0}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 8edb91ea20cf3d5468a31d7e791aa24d,
+    type: 3}
