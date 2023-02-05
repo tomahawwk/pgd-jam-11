@@ -942,7 +942,7 @@ Transform:
   m_GameObject: {fileID: 5588571742369937201}
   m_LocalRotation: {x: 0.48838705, y: -0.52251875, z: 0.48816046, w: 0.5001516}
   m_LocalPosition: {x: 34.575, y: -0.51, z: 34.63}
-  m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
+  m_LocalScale: {x: 0.76135, y: 0.76135004, z: 0.76135004}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6144727543483228303}
@@ -1026,19 +1026,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bunAvatar: {fileID: 0}
   _agaAvatar: {fileID: 0}
-  _items: []
   _axe: {fileID: 11400000, guid: b63a2e82ac927ad4b9f6b54f264eca1a, type: 2}
-  _apple: {fileID: 0}
-  _silverPlate: {fileID: 0}
-  _appleSilverPlate: {fileID: 0}
-  _stair: {fileID: 0}
-  _harpun: {fileID: 0}
-  _goldfish: {fileID: 0}
-  _yarn: {fileID: 0}
-  _viteyka: {fileID: 0}
-  _magicSphere: {fileID: 0}
-  _leyka: {fileID: 0}
-  _flower: {fileID: 0}
+  _apple: {fileID: 11400000, guid: 459c5ba9a9c90b644a65b2796855ecec, type: 2}
+  _saucer: {fileID: 11400000, guid: 57c519d915a70df4c9b9439b9dc3dd12, type: 2}
+  _appleSilverPlate: {fileID: 11400000, guid: a7396c1eff577d640a684a3fcf9a3c52, type: 2}
+  _stair: {fileID: 11400000, guid: 94afc9e02e724a448876fb172fe66d54, type: 2}
+  _harpun: {fileID: 11400000, guid: 3488b0244d7d0b547aa83bf0d27aafa3, type: 2}
+  _goldfish: {fileID: 11400000, guid: 678a54c1115a3a146b27355cbfe25cca, type: 2}
+  _yarn: {fileID: 11400000, guid: ba46fc17b4942f14c94a467864359322, type: 2}
+  _viteyka: {fileID: 11400000, guid: e6cd4d672c987f94590275259c90d0c5, type: 2}
+  _magicSphere: {fileID: 11400000, guid: a8623fc7ef2578b48a8c0cdb5aab126b, type: 2}
+  _leyka: {fileID: 11400000, guid: 8456702d83bbea14b89a23dfd0ee9bba, type: 2}
+  _flower: {fileID: 11400000, guid: 6eb2bb9a21903da498ae7513793e11aa, type: 2}
 --- !u!82 &1483835317992154837
 AudioSource:
   m_ObjectHideFlags: 0
