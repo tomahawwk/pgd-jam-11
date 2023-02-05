@@ -47161,7 +47161,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _item: {fileID: 11400000, guid: 345b42128cba4fd4ebab258dc2fa60c3, type: 2}
+  _item: {fileID: 11400000, guid: ba46fc17b4942f14c94a467864359322, type: 2}
   _positive: "\u041F\u043E\u0434\u043D\u044F\u0442\u044C"
   _negative: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C"
   _cantHoldMoreItems: ...
@@ -48952,6 +48952,7 @@ MonoBehaviour:
   - LightForest
   - Swamp
   - DarkForest
+  - Wasteland
 --- !u!4 &1598666852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c8405aea0301db7459fe958fd090f8a3,
@@ -59291,6 +59292,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: CatByun
       objectReference: {fileID: 0}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _yarn
+      value: 
+      objectReference: {fileID: 11400000, guid: ba46fc17b4942f14c94a467864359322,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _apple
+      value: 
+      objectReference: {fileID: 11400000, guid: 459c5ba9a9c90b644a65b2796855ecec,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _leyka
+      value: 
+      objectReference: {fileID: 11400000, guid: 8456702d83bbea14b89a23dfd0ee9bba,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _stair
+      value: 
+      objectReference: {fileID: 11400000, guid: 94afc9e02e724a448876fb172fe66d54,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _flower
+      value: 
+      objectReference: {fileID: 11400000, guid: 6eb2bb9a21903da498ae7513793e11aa,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _harpun
+      value: 
+      objectReference: {fileID: 11400000, guid: 3488b0244d7d0b547aa83bf0d27aafa3,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _saucer
+      value: 
+      objectReference: {fileID: 11400000, guid: 57c519d915a70df4c9b9439b9dc3dd12,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _viteyka
+      value: 
+      objectReference: {fileID: 11400000, guid: e6cd4d672c987f94590275259c90d0c5,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _goldfish
+      value: 
+      objectReference: {fileID: 11400000, guid: 678a54c1115a3a146b27355cbfe25cca,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _magicSphere
+      value: 
+      objectReference: {fileID: 11400000, guid: a8623fc7ef2578b48a8c0cdb5aab126b,
+        type: 2}
+    - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
+        type: 3}
+      propertyPath: _appleSilverPlate
+      value: 
+      objectReference: {fileID: 11400000, guid: a7396c1eff577d640a684a3fcf9a3c52,
+        type: 2}
     - target: {fileID: 5588571742369937204, guid: 9e6ebd9ab439b0e4baa66766a74d8b13,
         type: 3}
       propertyPath: _items.Array.size
