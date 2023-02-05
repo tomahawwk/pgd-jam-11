@@ -32,7 +32,7 @@ namespace Prototype
 
         [SerializeField] private Item _axe;
         [SerializeField] private Item _apple;
-        [SerializeField] private Item _silverPlate;
+        [SerializeField] private Item _saucer;
         [SerializeField] private Item _appleSilverPlate;
         [SerializeField] private Item _stair;
         [SerializeField] private Item _harpun;
@@ -118,7 +118,7 @@ namespace Prototype
             {
                 SayBun("А как же ты дотянешься, хозяйка, что-то я ни ступы, ни метлы не вижу. Ужель по лесенке карабкаться будешь?");
             }
-            else if (item == _silverPlate)
+            else if (item == _saucer)
             {
                 SayBun("В серебряном блюдце не хватает волшебства...");
             }
